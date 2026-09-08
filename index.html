@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Takrar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1b74e4;
+            --primary-dark: #1558b0;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #334155;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --code-bg: #f1f5f9;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #38bdf8;
+                --primary-dark: #0284c7;
+                --bg: #0b1329;
+                --surface: #1e293b;
+                --text-main: #f8fafc;
+                --text-muted: #cbd5e1;
+                --border: #334155;
+                --badge-bg: rgba(56, 189, 248, 0.1);
+                --badge-text: #38bdf8;
+                --code-bg: #0f172a;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.75;
+            padding: 2.5rem 1rem;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 3.5rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .updated-date {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2.25rem;
+            margin-bottom: 0.85rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        ul {
+            margin-left: 1.75rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-main);
+        }
+
+        code {
+            background-color: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 3.5rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="badge">Legal Document</span>
+            <h1>Privacy Policy</h1>
+            <p class="updated-date"><strong>Last Updated:</strong> September 06, 2026</p>
+            <p><strong>Takrar Tech</strong> built the <strong>Takrar</strong> app as an Educational and Commercial service. This service is provided by Takrar Tech and is intended for use as is.</p>
+            <p>This document informs users regarding our policies regarding the collection, use, and disclosure of personal information for anyone utilizing our Service.</p>
+            <p>If you choose to use our Service, you agree to the collection and use of information in relation to this policy. The personal information that we collect is used solely for providing, personalizing, and improving your educational experience. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
+        </header>
+
+        <hr>
+
+        <h2>1. Information Collection and Use</h2>
+        <p>To provide an enhanced, personalized educational experience, calculate your academic progress, and securely sync your learning data across devices, we collect information across the following categories:</p>
+
+        <h3>A. Authentication &amp; Account Data (via Google Sign-In &amp; Firebase Auth):</h3>
+        <p>When you sign in using Google or Firebase Authentication, we collect:</p>
+        <ul>
+            <li><strong>Google Account Name &amp; Email Address:</strong> Used to uniquely register and authenticate your student account and provide customer support.</li>
+            <li><strong>Profile Picture / Photo URL:</strong> Retrieved from your Google account to set your initial student profile picture and avatar within the app.</li>
+            <li><strong>Firebase User Identifier (UID) &amp; Auth Tokens:</strong> A unique cryptographic user identifier generated by Firebase Authentication to securely link your database records, learning progress, and exam history to your account.</li>
+        </ul>
+
+        <h3>B. Student Profile &amp; Onboarding Information (Directly Provided by User):</h3>
+        <ul>
+            <li><strong>Custom Display Name:</strong> Provided during profile setup to be displayed on your student profile card, streak count, and academic leaderboards (allowing you to use a preferred student name separate from your Google account).</li>
+            <li><strong>Country:</strong> Selected during onboarding to optimize user experience, adapt language settings, and deliver localized academic curriculum suitable for your region.</li>
+            <li><strong>Academic Details (Institution &amp; Class/Grade):</strong> Collected to structure syllabus chapters, assign grade-appropriate question banks, and organize personalized study routines.</li>
+            <li><strong>Gender:</strong> Collected during profile setup to distinguish between male and female students, enabling the app to provide tailored educational experiences, specific academic facilities and content appropriate for female students, and an optimized learning environment.</li>
+        </ul>
+
+        <h3>Purpose of Collection for Google Play Transparency:</h3>
+        <p>All profile and authentication information is collected strictly for <strong>App Functionality, Account Management, User Experience Optimization, and Educational Personalization</strong>. This information is securely tied to your student account and is <strong>never sold, rented, or shared with third-party data brokers</strong>.</p>
+
+        <h3>C. Technical, Device &amp; Location Identifiers:</h3>
+        <ul>
+            <li><strong>Device &amp; Technical Identifiers:</strong> Unique device identifiers, push notification tokens, IP address, and Google Advertising ID.</li>
+            <li><strong>Location Information (Approximate vs. Precise):</strong>
+                <ul>
+                    <li><strong>No Precise GPS Location:</strong> We <strong>do not</strong> collect, request, or access your precise geographical GPS coordinates.</li>
+                    <li><strong>Approximate Location (IP-Derived):</strong> Our integrated third-party ad networks (Google AdMob and Meta Audience Network) may automatically detect general, non-precise location (such as country or region) derived strictly from your IP address to deliver localized educational advertisements and comply with regional ad regulations.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>2. System Permissions and Declarations</h2>
+        <p>All system permissions utilized by Takrar serve transparent and necessary application functions:</p>
+        <ul>
+            <li><strong>Internet Access:</strong> Required to communicate with our secure backend servers to sync question banks, academic routines, study materials, and user progress.</li>
+            <li><strong>Network State Detection:</strong> Used to verify whether your device has an active internet connection, allowing the app to smoothly switch to local offline study mode when offline.</li>
+            <li><strong>Push Notifications:</strong> Used on Android 13+ to deliver daily study schedule reminders, streak alerts, and exam notices. You can disable notifications anytime in your device settings.</li>
+            <li><strong>Google Advertising ID:</strong> Utilized by certified ad networks to prevent ad fraud, limit ad frequency, and deliver contextual ads.</li>
+        </ul>
+
+        <h3>Sensitive Permissions We Never Use:</h3>
+        <p>Takrar does not request or access your Camera, Microphone, Contacts, Phonebook, SMS, or Precise GPS Location.</p>
+
+        <hr>
+
+        <h2>3. Third-Party Service Providers</h2>
+        <p>We integrate trusted industry-standard services to facilitate authentication, notifications, application stability, and monetization:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
+            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">Google AdMob</a></li>
+            <li><a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener noreferrer">Meta (Facebook) Audience Network</a></li>
+            <li><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">Google Analytics for Firebase</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Crashlytics &amp; Performance Monitoring</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Cloud Messaging</a></li>
+            <li><a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Facebook App Events</a></li>
+        </ul>
+
+        <h3>Google Play Core Services:</h3>
+        <ul>
+            <li><strong>In-App Updates:</strong> Detects and installs critical application updates directly through Google Play to maintain app security and stability.</li>
+            <li><strong>In-App Reviews:</strong> Facilitates user ratings and reviews directly via the official Google Play dialog without accessing or storing user review data on our servers.</li>
+        </ul>
+
+        <hr>
+
+        <h2>4. Audio and Educational Features</h2>
+        <p>We utilize built-in audio players and Text-to-Speech (TTS) engines strictly for reciting quiz questions, answers, and educational lessons. The application does not record, collect, or transmit your voice or microphone audio.</p>
+
+        <hr>
+
+        <h2>5. Log Data and Crash Diagnostics</h2>
+        <p>In the event of an application error or unexpected crash, diagnostic data is collected through Firebase Crashlytics ("Log Data"). This includes your device model, operating system version, the state of the app at the time of the error, network latency, and crash stack traces. This information is utilized solely to fix bugs and improve performance.</p>
+
+        <hr>
+
+        <h2>6. Local Storage and Caching</h2>
+        <p>Our application does not use browser cookies. Instead, we utilize secure on-device storage and local database caching to:</p>
+        <ul>
+            <li>Cache offline study routines, question banks, and learning chapters for offline access.</li>
+            <li>Store your active login session, streak count, points, and leaderboard statistics locally.</li>
+            <li>Remember your selected interface language and local application preferences.</li>
+        </ul>
+
+        <hr>
+
+        <h2>7. Advertisements</h2>
+        <p>Takrar displays advertisements delivered by <strong>Google AdMob</strong> and mediated via the <strong>Meta Audience Network</strong>. These networks may use your Google Advertising ID to serve relevant ads. You can manage or reset this identifier anytime in your Android settings under <strong>Settings &gt; Google &gt; Ads</strong>.</p>
+
+        <hr>
+
+        <h2>8. Service Providers</h2>
+        <p>We may employ third-party service companies to host backend cloud databases, deliver real-time push notifications, and monitor application health. These third parties have access to your personal information only to perform specific tasks on our behalf and are strictly bound not to disclose or use it for any other purpose.</p>
+
+        <hr>
+
+        <h2>9. Data Security and Encryption</h2>
+        <p>All network communications between the Takrar app and our backend servers are strictly encrypted in transit using industry-standard <strong>HTTPS / TLS</strong> encryption protocols. While we employ commercially acceptable safeguards to protect your personal data, no electronic transmission or storage system is 100% impenetrable.</p>
+
+        <hr>
+
+        <h2>10. Age Requirement (18+ Policy)</h2>
+        <p>Takrar is strictly intended for users who are 18 years of age or older. We do not knowingly collect personal information from individuals under 18. In the event we discover that an individual under the age of 18 has registered or provided personal information, we immediately and permanently purge such data from our servers. If a parent or guardian becomes aware that someone under 18 has registered, please contact us at <strong><code>takrar080@gmail.com</code></strong>.</p>
+
+        <hr>
+
+        <h2>11. Account and Data Deletion Rights</h2>
+        <p>Users retain complete control over their personal data, including the right to view, modify, or permanently delete their account and associated records:</p>
+        <ul>
+            <li><strong>Immediate In-App Deletion:</strong> Open the <strong>Takrar</strong> app, navigate to the <strong>Profile</strong> screen, tap <strong>Delete Account</strong>, and confirm. Your account, progress records, study streaks, quiz history, and personal details are permanently and immediately erased from our active database in real-time.</li>
+            <li><strong>Email Deletion Request:</strong> If you have uninstalled the app or cannot log in, send an email request to: <strong><code>takrar080@gmail.com</code></strong>. We will verify your identity and permanently delete all your records within 30 days.</li>
+        </ul>
+
+        <hr>
+
+        <h2>12. Links to External Sites</h2>
+        <p>The app may contain links to external resources (such as our Facebook community or academic references). Clicking a third-party link will redirect you to that external service. These external platforms are not operated by Takrar Tech; therefore, we strongly encourage you to review their respective privacy policies.</p>
+
+        <hr>
+
+        <h2>13. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy periodically to reflect app updates or regulatory changes. Any updates become effective immediately upon being posted within the application, marked by the "Last Updated" date above.</p>
+
+        <hr>
+
+        <h2>14. Contact Us</h2>
+        <p>If you have any questions, suggestions, or data inquiries regarding this Privacy Policy, please contact us:</p>
+        <ul>
+            <li><strong>Developer / Publisher:</strong> Takrar Tech</li>
+            <li><strong>Support &amp; Deletion Email:</strong> takrar080@gmail.com</li>
+            <li><strong>Application:</strong> Takrar</li>
+        </ul>
+
+        <footer>
+            <p>&copy; 2026 Takrar Tech. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
