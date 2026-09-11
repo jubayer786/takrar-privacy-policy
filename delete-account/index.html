@@ -1,140 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Account Deletion Request — Takrar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0F5132;
-      --surface: #F8F9FA;
+      --primary-light: #E8F5E9;
+      --surface: #F8FAFC;
       --card-bg: #FFFFFF;
-      --text: #212529;
-      --text-muted: #6C757D;
-      --border: #DEE2E6;
-      --danger: #DC3545;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --border: #E2E8F0;
+      --danger: #DC2626;
+      --danger-hover: #B91C1C;
+      --gmail-color: #EA4335;
+      --gmail-hover: #C5221F;
+      --btn-secondary: #F1F5F9;
+      --btn-secondary-hover: #E2E8F0;
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #34D399;
+        --primary-light: rgba(52, 211, 153, 0.12);
+        --surface: #0B1329;
+        --card-bg: #1E293B;
+        --text: #F8FAFC;
+        --text-muted: #94A3B8;
+        --border: #334155;
+        --danger: #EF4444;
+        --danger-hover: #DC2626;
+        --gmail-color: #EA4335;
+        --gmail-hover: #D93025;
+        --btn-secondary: #334155;
+        --btn-secondary-hover: #475569;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--surface);
       color: var(--text);
-      line-height: 1.6;
-      margin: 0;
-      padding: 24px 16px;
+      line-height: 1.7;
+      padding: 32px 16px;
     }
+
     .container {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       background: var(--card-bg);
-      border-radius: 16px;
+      border-radius: 20px;
       border: 1px solid var(--border);
-      padding: 32px 24px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      padding: 40px 32px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
     }
+
     .badge {
       display: inline-block;
-      padding: 4px 12px;
-      background: #E8F5E9;
+      padding: 6px 14px;
+      background: var(--primary-light);
       color: var(--primary);
-      border-radius: 20px;
+      border-radius: 9999px;
       font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 16px;
     }
+
     h1 {
-      font-size: 26px;
-      margin: 0 0 8px 0;
-      color: #111;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: var(--text);
     }
+
     p.subtitle {
       color: var(--text-muted);
-      margin-top: 0;
-      margin-bottom: 24px;
+      font-size: 15px;
+      margin-bottom: 28px;
     }
+
     .card {
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 22px;
+      background: var(--card-bg);
     }
+
     .card h2 {
-      font-size: 18px;
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: var(--primary);
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    .card p {
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
     ul {
-      padding-left: 20px;
-      margin: 8px 0;
+      padding-left: 22px;
+      margin: 12px 0;
+      color: var(--text-muted);
+      font-size: 15px;
     }
+
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
+
+    strong {
+      color: var(--text);
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-gmail {
+      background-color: var(--gmail-color);
+      color: #FFFFFF;
+    }
+    .btn-gmail:hover {
+      background-color: var(--gmail-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-danger {
       background-color: var(--danger);
       color: #FFFFFF;
-      text-decoration: none;
-      padding: 12px 24px;
+    }
+    .btn-danger:hover {
+      background-color: var(--danger-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--btn-secondary);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background-color: var(--btn-secondary-hover);
+      transform: translateY(-1px);
+    }
+
+    .email-display {
+      background: var(--surface);
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-family: monospace;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      word-break: break-all;
+    }
+
+    .toast {
+      display: none;
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 8px 16px;
       border-radius: 8px;
+      font-size: 13px;
       font-weight: 600;
+      margin-top: 8px;
       text-align: center;
-      margin-top: 10px;
     }
-    .btn:hover {
-      background-color: #B02A37;
-    }
+
     .footer {
       text-align: center;
       font-size: 13px;
       color: var(--text-muted);
-      margin-top: 32px;
+      margin-top: 36px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <span class="badge">Takrar Tech • Data Governance</span>
+  <span class="badge">Takrar Tech • Official Data Governance</span>
   <h1>Request Account & Data Deletion</h1>
-  <p class="subtitle">Official Account Deletion Portal for Takrar</p>
+  <p class="subtitle">Official Account and Data Deletion Portal for Takrar</p>
 
+  <!-- Option 1: In-App -->
   <div class="card">
-    <h2>Option 1: Immediate In-App Deletion (Recommended)</h2>
-    <p>If you still have the Takrar app installed on your Android device:</p>
+    <h2>📱 Option 1: Immediate In-App Deletion (Recommended)</h2>
+    <p>If you have the Takrar app installed on your Android device:</p>
     <ul>
       <li>Open the <strong>Takrar</strong> app.</li>
-      <li>Go to the <strong>Profile</strong> tab.</li>
-      <li>Scroll down and tap <strong>Delete Account</strong>.</li>
-      <li>Confirm your request in the dialog.</li>
+      <li>Go to your <strong>Profile</strong> tab.</li>
+      <li>Scroll to the bottom and tap <strong>Delete Account</strong>.</li>
+      <li>Confirm your request in the prompt.</li>
     </ul>
-    <p><em>Your student profile, learning streak, exam history, and progress records will be instantly erased from our live databases in real-time.</em></p>
+    <p><em>Result: Your student profile, streak record, exam history, and progress are deleted instantly and automatically from our live production databases in real-time.</em></p>
   </div>
 
+  <!-- Option 2: Email Request -->
   <div class="card">
-    <h2>Option 2: Submit a Deletion Request via Email</h2>
-    <p>If you have uninstalled the app or cannot sign in, you can request full account deletion by emailing our support team:</p>
-    <ul>
-      <li><strong>Support Email:</strong> <a href="mailto:takrar080@gmail.com?subject=Account%20Deletion%20Request%20-%20Takrar">takrar080@gmail.com</a></li>
-      <li><strong>Information Required:</strong> The Google account email address associated with your Takrar student account.</li>
-    </ul>
-    <a class="btn" href="mailto:takrar080@gmail.com?subject=Takrar%20Account%20Deletion%20Request&body=Hello%20Takrar%20Support,%0A%0AI%20would%20like%20to%20request%20the%20permanent%20deletion%20of%20my%20Takrar%20account%20and%20all%20associated%20data.%0A%0ARegistered%20Email:%20[Your%20Google%20Account%20Email%20Here]%0A%0AThank%20you.">Send Deletion Request Email</a>
+    <h2>✉️ Option 2: Submit a Deletion Request via Email</h2>
+    <p>If you have already uninstalled the app or cannot sign in, you can request full account and data deletion by sending a request to our support team:</p>
+    
+    <div class="email-display">
+      <span id="targetEmail">takrar080@gmail.com</span>
+      <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px;" onclick="copyEmail()">📋 Copy Email</button>
+    </div>
+    <div id="copyToast" class="toast">✓ Email address copied to clipboard!</div>
+
+    <p style="margin-top: 14px;"><strong>Please select your preferred way to send the request:</strong></p>
+
+    <div class="button-group">
+      <!-- 1. Web Gmail Direct Compose (Works 100% on any browser / PC) -->
+      <a class="btn btn-gmail" target="_blank" rel="noopener noreferrer"
+         href="https://mail.google.com/mail/?view=cm&fs=1&to=takrar080@gmail.com&su=Takrar%20Account%20Deletion%20Request&body=Hello%20Takrar%20Support,%0A%0AI%20would%20like%20to%20request%20the%20permanent%20deletion%20of%20my%20Takrar%20student%20account%20and%20all%20associated%20data.%0A%0AMy%20Registered%20Google%20Email:%20[Please%20type%20your%20registered%20email%20here]%0A%0AThank%20you.">
+        🌐 Open in Web Gmail
+      </a>
+
+      <!-- 2. Native Mail Client (Perfect for Mobile or Desktop apps) -->
+      <a class="btn btn-danger"
+         href="mailto:takrar080@gmail.com?subject=Takrar%20Account%20Deletion%20Request&body=Hello%20Takrar%20Support,%0A%0AI%20would%20like%20to%20request%20the%20permanent%20deletion%20of%20my%20Takrar%20student%20account%20and%20all%20associated%20data.%0A%0AMy%20Registered%20Google%20Email:%20[Please%20type%20your%20registered%20email%20here]%0A%0AThank%20you.">
+        📧 Open in Mail App
+      </a>
+    </div>
   </div>
 
+  <!-- Data Governance Summary -->
   <div class="card">
-    <h2>Data Deletion & Retention Summary</h2>
+    <h2>🛡️ Data Deletion & Retention Summary (Google Play Compliance)</h2>
     <ul>
-      <li><strong>Data Permanently Deleted:</strong> Student name, email address, profile avatar URL, unique user ID (UID), learning streak, routine schedule, bookmark history, and quiz/exam scores.</li>
-      <li><strong>Deletion Timeline:</strong> Direct in-app deletion is instant. Email deletion requests are verified and permanently executed within 30 days.</li>
+      <li><strong>Data Permanently Purged:</strong> Student name, email address, profile avatar URL, unique Firebase UID, learning streaks, daily schedules, bookmarks, mistake records, and exam scores.</li>
+      <li><strong>Execution Timeline:</strong> Direct in-app deletion is instant (0 days). Email deletion requests are verified and permanently executed within 30 days.</li>
       <li><strong>Disaster Recovery Backups:</strong> System backups and encrypted recovery logs are overwritten on an automated 30-day lifecycle.</li>
+      <li><strong>Retention Exemption:</strong> Takrar does not retain your personal data after account deletion, except where minimal ephemeral security logs are required by applicable laws.</li>
     </ul>
   </div>
 
   <div class="footer">
-    © 2026 Takrar Tech • Takrar Educational App • Developer: takrar080@gmail.com
+    <p>© 2026 Takrar Tech • All rights reserved.</p>
+    <p style="margin-top: 6px;">
+      <a href="../">Read Full Privacy Policy</a> • Support: <a href="mailto:takrar080@gmail.com">takrar080@gmail.com</a>
+    </p>
   </div>
 </div>
+
+<script>
+  function copyEmail() {
+    const email = document.getElementById('targetEmail').innerText;
+    navigator.clipboard.writeText(email).then(() => {
+      const toast = document.getElementById('copyToast');
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3000);
+    }).catch(err => {
+      alert('Email: ' + email);
+    });
+  }
+</script>
 
 </body>
 </html>
