@@ -211,7 +211,7 @@
         <ul>
             <li><strong>Custom Display Name:</strong> Provided during profile setup to be displayed on your student profile card, streak count, and academic leaderboards (allowing you to use a preferred student name separate from your Google account).</li>
             <li><strong>Country:</strong> Selected during onboarding to personalize your educational experience, adapt interface language settings, deliver localized study reminders in your preferred language, and display your national flag on academic leaderboards to foster friendly peer motivation and global student engagement.</li>
-            <li><strong>Academic Details (Institution, Curriculum &amp; Academic Stage):</strong> Collected to structure syllabus chapters, provide appropriate study materials and question banks, and organize personalized study routines based on the user's selected educational program (such as Al-Azhar preparatory, secondary, and higher academic levels).</li>
+            <li><strong>Academic Details (Institution, Curriculum &amp; Academic Stage):</strong> Collected to structure syllabus chapters, provide appropriate study materials and question banks, and organize personalized study routines based on the user's selected educational program (encompassing classical Arabic linguistic studies, prerequisite academic disciplines, and higher university faculty specializations).</li>
         </ul>
 
         <h3>Purpose of Collection and Sharing for Google Play Transparency:</h3>
@@ -234,7 +234,7 @@
         <ul>
             <li><strong>Device &amp; Technical Identifiers:</strong> Unique device identifiers, push notification tokens (FCM), operating system version, device platform/model, app version, interface language/locale, IP address, Android Advertising ID (GAID), and App Set ID.</li>
             <li><strong>Automatic Ad Network Collection (Google Mobile Ads SDK &amp; Meta):</strong>
-                These networks may automatically collect and share certain technical, diagnostic, and usage data for advertising, analytics, frequency capping, and fraud prevention purposes in accordance with Google's Play Data Disclosure standards:
+                These networks may automatically collect and share certain technical, diagnostic, and usage data for advertising, analytics, frequency capping, and fraud prevention purposes in accordance with Google's Play Data Disclosure standards, including:
                 <ul>
                     <li><strong>IP Address:</strong> Automatically processed for fraud/abuse prevention, network diagnostics, and approximate geographic routing.</li>
                     <li><strong>User Product Interactions:</strong> User ad interactions (such as ad impressions, taps, clicks, and video completion events).</li>
@@ -244,8 +244,8 @@
             </li>
             <li><strong>Location Information (Approximate vs. Precise):</strong>
                 <ul>
-                    <li><strong>No Precise GPS Location:</strong> We <strong>do not</strong> collect, request, or access your precise geographical GPS coordinates.</li>
-                    <li><strong>Approximate Location (IP-Derived):</strong> Our integrated ad networks automatically detect general, non-precise location (such as country or city region) derived strictly from your IP address to deliver localized advertisements and comply with regional ad regulations.</li>
+                    <li><strong>No Device Location Permissions:</strong> Takrar does not request or collect device location through Android location permissions.</li>
+                    <li><strong>Approximate Location (IP-Derived):</strong> Integrated third-party SDKs (including Google Mobile Ads and Meta) may process IP address and derive approximate geographic information for advertising, fraud prevention, campaign attribution, or related purposes. Where required by Google Play's SDK-specific Data Safety guidance, such processing is disclosed as Approximate Location.</li>
                 </ul>
             </li>
         </ul>
@@ -256,7 +256,7 @@
         <p>All system permissions utilized by Takrar serve transparent and necessary application functions:</p>
         <ul>
             <li><strong>Internet Access &amp; Network State Detection:</strong> Required to communicate with our secure backend servers, verify connectivity, and seamlessly switch between live syncing and local offline study modes.</li>
-            <li><strong>Push Notifications:</strong> Used on Android 13+ to deliver daily study schedule reminders, streak alerts, and exam notices. A push notification token (FCM) is processed to deliver these reminders to your device; the token is associated with your active device for notification delivery and is invalidated or permanently purged when no longer needed, including upon account deletion or app uninstallation. You can disable notifications anytime in your device settings.</li>
+            <li><strong>Push Notifications:</strong> Used on Android 13+ to deliver daily study schedule reminders, streak alerts, and exam notices. A push notification token (FCM) is processed to deliver these reminders to your device; the token is invalidated by Firebase upon uninstallation or rotation, and is purged from our backend device registries upon user logout, account deletion, or when identified as stale/unregistered during delivery attempts. You can disable notifications anytime in your device settings.</li>
             <li><strong>Google Advertising ID &amp; Platform Ad Identifiers:</strong> Utilized by certified ad networks (Google Mobile Ads &amp; Meta) to prevent ad fraud, limit ad frequency, and deliver privacy-preserving contextual ads in accordance with modern Android advertising standards. (Takrar does not collect, query, or process Topics or AdServices data directly; modern Android Privacy Sandbox and AdServices capabilities on supported devices such as Android 13+ are managed independently and automatically by certified SDK mediation, including Google Mobile Ads, in accordance with Google Play developer standards).</li>
             <li><strong>Wake State Management (WAKE_LOCK):</strong> Used strictly by Firebase Cloud Messaging and audio synthesis handlers to ensure reliable push notification delivery and uninterrupted educational audio playback.</li>
         </ul>
@@ -267,7 +267,7 @@
         <hr>
 
         <h2>3. Third-Party Service Providers and Data Processors</h2>
-        <p>We integrate trusted industry-standard service companies and third-party platforms to facilitate authentication, cloud databases, notifications, crash diagnostics, monetization, and educational audio synthesis. These service providers have access to your information only to perform specific tasks on our behalf under strict confidentiality agreements:</p>
+        <p>We integrate trusted industry-standard service companies and third-party platforms to facilitate authentication, cloud databases, notifications, crash diagnostics, monetization, and educational audio synthesis. These service providers have access to your information only to perform specific tasks on our behalf and are strictly bound by contractual confidentiality obligations not to disclose, sell, or repurpose your data for any other objective:</p>
         <ul>
             <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
             <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener noreferrer">Google AdMob</a></li>
@@ -313,13 +313,27 @@
         <div class="card">
             <h4>Facebook App Events (Meta SDK)</h4>
             <p><strong>Data Processed:</strong> High-level educational engagement milestones (<code>practice_started</code>, registration completed).</p>
-            <p><strong>Operational Purpose:</strong> Campaign attribution, install measurement, and aggregated analytics. (No personal student credentials, passwords, or quiz answers are ever shared with Meta).</p>
+            <p><strong>Operational Purpose:</strong> Campaign attribution, install measurement, and aggregated analytics.</p>
         </div>
         <div class="card">
             <h4>Microsoft Edge Speech Services</h4>
             <p><strong>Data Processed:</strong> Transient educational Arabic curriculum text.</p>
-            <p><strong>Operational Purpose:</strong> Real-time Text-to-Speech (TTS) pronunciation audio playback (0 days retention, no server storage).</p>
+            <p><strong>Operational Purpose:</strong> Real-time Text-to-Speech (TTS) pronunciation audio playback (no server storage).</p>
         </div>
+        <div class="card">
+            <h4>Google Play Core</h4>
+            <p><strong>Data Processed:</strong> Application version string, update status, and in-app review dialog triggers.</p>
+            <p><strong>Operational Purpose:</strong> Platform security updates and official Google Play store reviews.</p>
+        </div>
+
+        <h3>Meta (Facebook) SDK &amp; App Events (Analytics &amp; Marketing Attribution):</h3>
+        <p>We utilize the official <strong>Meta (Facebook) SDK</strong> and <strong>Facebook App Events</strong> for marketing attribution, campaign measurement, and aggregated educational engagement analytics.</p>
+        <ul>
+            <li><strong>Events Logged:</strong> Key user milestones including app first launch (<code>app_launch_first_time</code>), registration completion (<code>completed_registration</code>), practice initiation (<code>practice_started</code>), and aggregated study engagement metrics (such as completed quiz milestones and routine interactions).</li>
+            <li><strong>Data Collected:</strong> Non-sensitive technical identifiers including Google Advertising ID (GAID), device model, operating system version, IP address, event timestamps, and high-level educational engagement metrics.</li>
+            <li><strong>Privacy Safeguards:</strong> We strictly do <strong>not</strong> transmit student email addresses, names, Firebase UIDs, passwords, private Quranic notes, or individual quiz answer options to Meta.</li>
+            <li><strong>User Opt-Out:</strong> You can opt out of interest-based advertising and reset or delete your Advertising ID directly via your Android device settings under <strong>Settings &gt; Google &gt; Ads</strong>. For more details on how Meta handles data, visit <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.</li>
+        </ul>
 
         <h3>Google Play Core Services:</h3>
         <ul>
@@ -333,7 +347,7 @@
         <p>We utilize high-quality Text-to-Speech (TTS) synthesis powered by <strong>Microsoft Edge Speech Services</strong> and local audio players strictly for reciting educational Arabic lessons, reading passages, and quiz questions with accurate pronunciation.</p>
         <ul>
             <li><strong>No Voice Recording:</strong> The application does <strong>not</strong> record, access, collect, or transmit your voice or microphone audio under any circumstance.</li>
-            <li><strong>Real-Time Text Processing Only:</strong> Only standardized public educational Arabic text from our curriculum is transmitted to the TTS engine to generate transient audio playback, which is then cached locally on your device to minimize bandwidth. Microsoft Edge Speech Services processes text solely for real-time transient audio stream synthesis and does not store, retain, or log the curriculum text or any personal data.</li>
+            <li><strong>Real-Time Text Processing Only:</strong> Only standardized public educational Arabic text from our curriculum is transmitted to the TTS engine to generate transient audio playback, which is then cached locally on your device to minimize bandwidth. Takrar does not transmit any student personal information, user-generated text, or voice recordings to the TTS service. Third-party speech synthesis is governed by the <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a>.</li>
         </ul>
 
         <hr>
@@ -344,6 +358,7 @@
             <li><strong>Firebase Performance Monitoring:</strong> Measures network latency, API request speed, response duration, and application render times to optimize backend server responsiveness.</li>
             <li><strong>Firebase Crashlytics:</strong> Collects diagnostic stack traces, device hardware model, operating system version, and application state at the time of an error.</li>
         </ul>
+        <p>This technical data is utilized strictly for system diagnostics, server performance tuning, and software stability.</p>
 
         <hr>
 
@@ -369,13 +384,16 @@
         <hr>
 
         <h2>8. Data Security, Encryption, and International Data Transfers</h2>
+        <h3>A. Data Security and Transit Encryption:</h3>
         <p>All network communications between the Takrar app and our backend servers are strictly encrypted in transit using industry-standard <strong>HTTPS / TLS (Transport Layer Security)</strong> protocols. While we employ commercially acceptable administrative and technical safeguards to protect your personal data, no electronic transmission or storage system can be guaranteed 100% impenetrable.</p>
-        <p>To deliver high-availability cloud synchronization and reliable services, your information is processed and stored on secure cloud databases operated by our trusted infrastructure partners (specifically <strong>Google Firebase / Google Cloud</strong>) located in secure data centers worldwide. By utilizing our Service, you acknowledge that your data may be transferred across international borders, under industry-standard contractual safeguards and cryptographic encryption ensuring your data rights remain fully preserved.</p>
+
+        <h3>B. International (Cross-Border) Data Transfers:</h3>
+        <p>To deliver high-availability cloud synchronization and reliable services, your information is processed and stored on secure cloud databases operated by our trusted infrastructure partners (specifically <strong>Google Firebase / Google Cloud</strong>) located in secure data centers worldwide (including the United States and global regions). By utilizing our Service, you acknowledge that your data may be transferred across international borders, under industry-standard contractual safeguards and cryptographic encryption ensuring your data rights remain fully preserved.</p>
 
         <hr>
 
-        <h2>9. Age Requirement (18+ Policy)</h2>
-        <p>Takrar is intended for adult learners and students aged 18 and older. While the educational materials encompass Islamic academic curricula including preparatory (I'dadi), secondary (Thanawi), and university levels, the Service is structured for adult students and independent learners. We do not knowingly collect personal information from individuals under 18. In the event we discover that an individual under the age of 18 has registered or provided personal information, we immediately and permanently purge such data from our servers. If a parent or guardian becomes aware that someone under 18 has registered, please contact us at <strong><code>takrar080@gmail.com</code></strong>.</p>
+        <h2>9. Age Requirement (Strictly 18+)</h2>
+        <p>Takrar is strictly intended and structured for adult learners and independent students aged 18 and older. While our educational library encompasses comprehensive Islamic academic curricula spanning classical Arabic linguistic studies, prerequisite academic disciplines, and university faculty coursework (routinely studied by international university students, academic candidates, and independent researchers), the Service does not target minors. We do not permit registration or knowingly collect personal data from anyone under the age of 18. In the event we discover that an account belongs to an individual under the age of 18, we immediately and permanently purge such data from our servers. If a parent or guardian becomes aware that someone under 18 has registered, please contact us at <strong><code>takrar080@gmail.com</code></strong>.</p>
 
         <hr>
 
@@ -385,54 +403,54 @@
         <h3>A. Data Retention Lifecycles:</h3>
         <div class="card">
             <h4>1. Student Account &amp; Profile Data</h4>
-            <p><strong>Categories:</strong> Name, Email, Profile Avatar URL, Firebase UID.</p>
-            <p><strong>Retention:</strong> Retained while student account remains active for cross-device syncing.</p>
-            <p><strong>Purge Trigger:</strong> Erased immediately upon in-app account deletion, or after 24 consecutive months of inactivity.</p>
+            <p><strong>Data Categories:</strong> Name, Email, Profile Avatar URL, Firebase UID.</p>
+            <p><strong>Retention Duration:</strong> Retained while your student account remains active for seamless cross-device syncing.</p>
+            <p><strong>Purge Trigger:</strong> Erased immediately upon in-app account deletion, or after 24 consecutive months of complete inactivity.</p>
         </div>
         <div class="card">
             <h4>2. Learning Progress &amp; Academic Records</h4>
-            <p><strong>Categories:</strong> Practice scores, exam answers, bookmarks, mistake bank, study streak counts.</p>
-            <p><strong>Retention:</strong> Maintained during active learning for syllabus progression and leaderboards.</p>
+            <p><strong>Data Categories:</strong> Practice scores, exam answers, bookmarks, mistake bank, and daily study streak counts.</p>
+            <p><strong>Retention Duration:</strong> Maintained during active learning for syllabus progression and academic leaderboards.</p>
             <p><strong>Purge Trigger:</strong> Erased from active application databases immediately upon account deletion.</p>
         </div>
         <div class="card">
             <h4>3. Crash Diagnostics &amp; Performance Traces</h4>
-            <p><strong>Categories:</strong> Crashlytics crash traces, hardware model, OS version, network latency.</p>
-            <p><strong>Retention:</strong> Up to 90 days maximum.</p>
-            <p><strong>Purge Trigger:</strong> Automatically scrubbed and deleted on Firebase's standard rolling 90-day lifecycle.</p>
+            <p><strong>Data Categories:</strong> Firebase Crashlytics crash traces, device hardware model, OS version, and network latency metrics.</p>
+            <p><strong>Retention Duration:</strong> Typically up to 90 days, governed by Google Firebase's standard platform retention policies.</p>
+            <p><strong>Purge Trigger:</strong> Automatically scrubbed and deleted in accordance with Firebase Crashlytics rolling lifecycle schedules.</p>
         </div>
         <div class="card">
             <h4>4. Push Notification Tokens (FCM)</h4>
-            <p><strong>Categories:</strong> FCM device registration token.</p>
-            <p><strong>Retention:</strong> Maintained while app remains installed on device.</p>
-            <p><strong>Purge Trigger:</strong> Automatically invalidated and purged upon app uninstall, token refresh, or account deletion.</p>
+            <p><strong>Data Categories:</strong> Firebase Cloud Messaging device registration token.</p>
+            <p><strong>Retention Duration:</strong> Retained while the application remains active on your device.</p>
+            <p><strong>Purge Trigger:</strong> Invalidated by Firebase upon uninstallation; purged from our backend registries upon user logout, account deletion, token refresh, or when identified as unregistered during delivery.</p>
         </div>
         <div class="card">
             <h4>5. Server Access &amp; Network Security Logs</h4>
-            <p><strong>Categories:</strong> HTTP request headers, IP address, timestamp.</p>
-            <p><strong>Retention:</strong> Up to 30 days maximum.</p>
-            <p><strong>Purge Trigger:</strong> Purged automatically following security auditing and fraud prevention review.</p>
+            <p><strong>Data Categories:</strong> HTTP request headers, IP address, and timestamp.</p>
+            <p><strong>Retention Duration:</strong> Up to 30 days maximum.</p>
+            <p><strong>Purge Trigger:</strong> Purged automatically following security auditing, rate limiting, and fraud prevention review.</p>
         </div>
         <div class="card">
             <h4>6. Educational Audio &amp; Speech Text (TTS)</h4>
-            <p><strong>Categories:</strong> Public educational Arabic lesson text transmitted to Microsoft Edge Speech Services.</p>
-            <p><strong>Retention:</strong> <strong>0 Days (No Storage).</strong></p>
-            <p><strong>Purge Trigger:</strong> Processed solely for transient real-time audio playback; never stored or logged on remote servers.</p>
+            <p><strong>Data Categories:</strong> Public educational Arabic lesson text transmitted to Microsoft Edge Speech Services (strictly non-personal).</p>
+            <p><strong>Retention Duration:</strong> Ephemeral real-time stream synthesis; generated audio files are cached solely on the user's local device.</p>
+            <p><strong>Purge Trigger:</strong> Takrar retains zero TTS lesson text on remote servers; external synthesis processing is governed by Microsoft's standard platform privacy terms.</p>
         </div>
         <div class="card">
             <h4>7. Encrypted Disaster-Recovery Backups</h4>
-            <p><strong>Categories:</strong> System-level automated encrypted database snapshots.</p>
-            <p><strong>Retention:</strong> Up to 30 days maximum.</p>
+            <p><strong>Data Categories:</strong> System-level automated encrypted database snapshots.</p>
+            <p><strong>Retention Duration:</strong> Up to 30 days maximum.</p>
             <p><strong>Purge Trigger:</strong> Completely overwritten and permanently purged on an automated 30-day rotation cycle.</p>
         </div>
 
         <h3>B. Deletion Mechanisms and Timelines:</h3>
-        <p>When you request account deletion, we immediately erase personal data associated with your student account from our active, live application databases in real-time. Certain limited diagnostic records or encrypted recovery data may be retained for a strictly limited period where required for platform security, fraud prevention, legal compliance, or subject to standard third-party service provider lifecycles.</p>
+        <p>When you request account deletion, we immediately erase the personal data associated with your student account from our active, live application databases in real-time. Certain limited diagnostic records or encrypted recovery data may be retained for a strictly limited period where required for platform security, fraud prevention, legal compliance, or subject to standard third-party service provider lifecycles (as detailed in the Data Retention Matrix above).</p>
         <ul>
-            <li><strong>Immediate In-App Deletion:</strong> Open the <strong>Takrar</strong> app, navigate to the <strong>Profile</strong> screen, tap <strong>Delete Account</strong>, and confirm. Your personal profile, credentials, study progress, streaks, and quiz history are deleted from active databases in real-time.</li>
+            <li><strong>Immediate In-App Deletion:</strong> Open the <strong>Takrar</strong> app, navigate to the <strong>Profile</strong> screen, tap <strong>Delete Account</strong>, and confirm. Your personal profile, credentials, study progress, streaks, and quiz history are deleted from our active production database in real-time.</li>
             <li><strong>Public Web Deletion Portal:</strong> Users who cannot access the app or have uninstalled it may submit a permanent account deletion request via our dedicated online deletion portal at:<br>
             👉 <a href="https://jubayer786.github.io/takrar-privacy-policy/delete-account.html" target="_blank" rel="noopener noreferrer"><strong>https://jubayer786.github.io/takrar-privacy-policy/delete-account.html</strong></a></li>
-            <li><strong>Email Deletion Request:</strong> You may email your deletion request directly to <strong><code>takrar080@gmail.com</code></strong>. We verify your identity and process full deletion within 30 days.</li>
+            <li><strong>Email Deletion Request:</strong> You may also email your deletion request directly to <strong><code>takrar080@gmail.com</code></strong>. We will verify your identity and process full deletion within 30 days.</li>
             <li><strong>Backup Overwrite:</strong> Residual data in encrypted system backups and disaster-recovery logs is completely overwritten and permanently purged within an automated 30-day rotation cycle.</li>
         </ul>
 
